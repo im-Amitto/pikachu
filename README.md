@@ -8,3 +8,4 @@ Features:
 - OCR  
 - Face Detection  
 - PPG Reading 
+- Image to Speech (Coming Soon)
