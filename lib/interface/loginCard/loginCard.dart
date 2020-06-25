@@ -28,10 +28,10 @@ class _LoginCardState extends State<LoginCard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login Card'),
+        title: const Text('Prescription Card'),
       ),
       body: _result == null
-          ? const Center(child: Text('Upload a login card'))
+          ? const Center(child: Text('Upload a prescription card'))
           : Center(
               child: Text(_result,
                   style: TextStyle(

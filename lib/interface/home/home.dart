@@ -66,250 +66,88 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text("Core Tools",
+                              Text("Tools",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 24)),
-                              Container(
-                                height: 125.0,
-                                child: new ListView(
-                                  scrollDirection: Axis.horizontal,
-                                  children: <Widget>[
-                                    Card(
-                                        elevation: 5,
-                                        child: InkWell(
-                                            onTap: () {
-                                              Navigator.of(context)
-                                                  .pushNamed("/ocr");
-                                            },
-                                            child: Padding(
-                                              padding: EdgeInsets.all(10.0),
-                                              child: Column(
-                                                children: <Widget>[
-                                                  FaIcon(
-                                                    FontAwesomeIcons.airFreshener,
-                                                    color: Colors.pink,
-                                                    size: 70.0,
-                                                    semanticLabel: 'OCR',
-                                                  ),
-                                                  Text("OCR",
-                                                      style: TextStyle(
-                                                          fontSize: 16)),
-                                                ],
-                                              ),
-                                            ))),
-                                    Card(
-                                        elevation: 5,
-                                        child: InkWell(
-                                            onTap: () {
-                                              Navigator.of(context)
-                                                  .pushNamed("/ppg");
-                                            },
-                                            child: Padding(
-                                              padding: EdgeInsets.all(10.0),
-                                              child: Column(
-                                                children: <Widget>[
-                                                  FaIcon(
-                                                    FontAwesomeIcons.heartbeat,
-                                                    color: Colors.pink,
-                                                    size: 70.0,
-                                                    semanticLabel: 'PPG',
-                                                  ),
-                                                  Text("PPG",
-                                                      style: TextStyle(
-                                                          fontSize: 16)),
-                                                ],
-                                              ),
-                                            ))),
-                                    Card(
-                                        elevation: 5,
-                                        child: InkWell(
-                                            onTap: () {
-                                              Navigator.of(context)
-                                                  .pushNamed("/comingSoon");
-                                            },
-                                            child: Padding(
-                                              padding: EdgeInsets.all(10.0),
-                                              child: Column(
-                                                children: <Widget>[
-                                                  FaIcon(
-                                                    FontAwesomeIcons.userAlt,
-                                                    color: Colors.pink,
-                                                    size: 70.0,
-                                                    semanticLabel:
-                                                        'Face detection',
-                                                  ),
-                                                  Text("Face detection",
-                                                      style: TextStyle(
-                                                          fontSize: 16)),
-                                                ],
-                                              ),
-                                            ))),
-                                    Card(
-                                        elevation: 5,
-                                        child: InkWell(
-                                            onTap: () {
-                                              Navigator.of(context)
-                                                  .pushNamed("/comingSoon");
-                                            },
-                                            child: Padding(
-                                              padding: EdgeInsets.all(10.0),
-                                              child: Column(
-                                                children: <Widget>[
-                                                  FaIcon(
-                                                    FontAwesomeIcons.cat,
-                                                    color: Colors.pink,
-                                                    size: 70.0,
-                                                    semanticLabel:
-                                                        'Image to Speech',
-                                                  ),
-                                                  Text("Image to Speech",
-                                                      style: TextStyle(
-                                                          fontSize: 16)),
-                                                ],
-                                              ),
-                                            ))),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ))),
-                  Card(
-                      elevation: 5,
-                      margin: EdgeInsets.fromLTRB(4.0, 10.0, 4.0, 10.0),
-                      child: Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text("Derived tools",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 24)),
-                              Container(
-                                height: 125.0,
-                                child: new ListView(
-                                  scrollDirection: Axis.horizontal,
-                                  children: <Widget>[
-                                    Card(
-                                        elevation: 5,
-                                        child: InkWell(
-                                            onTap: () {
-                                              Navigator.of(context)
-                                                  .pushNamed("/loginCard");
-                                            },
-                                            child: Padding(
-                                              padding: EdgeInsets.all(10.0),
-                                              child: Column(
-                                                children: <Widget>[
-                                                  FaIcon(
-                                                    FontAwesomeIcons.idCard,
-                                                    color: Colors.pink,
-                                                    size: 70.0,
-                                                    semanticLabel: 'Login Card',
-                                                  ),
-                                                  Text("Login Card",
-                                                      style: TextStyle(
-                                                          fontSize: 16)),
-                                                ],
-                                              ),
-                                            ))),
-                                    Card(
-                                        elevation: 5,
-                                        child: InkWell(
-                                            onTap: () {
-                                              Navigator.of(context)
-                                                  .pushNamed("/comingSoon");
-                                            },
-                                            child: Padding(
-                                              padding: EdgeInsets.all(10.0),
-                                              child: Column(
-                                                children: <Widget>[
-                                                  FaIcon(
-                                                    FontAwesomeIcons.paintBrush,
-                                                    color: Colors.pink,
-                                                    size: 70.0,
-                                                    semanticLabel:
-                                                        'Text Painter',
-                                                  ),
-                                                  Text("Text Painter",
-                                                      style: TextStyle(
-                                                          fontSize: 16)),
-                                                ],
-                                              ),
-                                            ))),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ))),
-                  Card(
-                      elevation: 5,
-                      margin: EdgeInsets.fromLTRB(4.0, 10.0, 4.0, 10.0),
-                      child: Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text("Medical Tools",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 24)),
-                              Container(
-                                height: 125.0,
-                                child: new ListView(
-                                  scrollDirection: Axis.horizontal,
-                                  children: <Widget>[
-                                    Card(
-                                        elevation: 5,
-                                        child: InkWell(
-                                            onTap: () {
-                                              Navigator.of(context)
-                                                  .pushNamed("/comingSoon");
-                                            },
-                                            child: Padding(
-                                              padding: EdgeInsets.all(10.0),
-                                              child: Column(
-                                                children: <Widget>[
-                                                  FaIcon(
-                                                    FontAwesomeIcons.userAlt,
-                                                    color: Colors.pink,
-                                                    size: 70.0,
-                                                    semanticLabel:
-                                                        'Face Detection',
-                                                  ),
-                                                  Text("Face Detection",
-                                                      style: TextStyle(
-                                                          fontSize: 16)),
-                                                ],
-                                              ),
-                                            ))),
-                                    Card(
-                                        elevation: 5,
-                                        child: InkWell(
-                                            onTap: () {
-                                              Navigator.of(context)
-                                                  .pushNamed("/comingSoon");
-                                            },
-                                            child: Padding(
-                                              padding: EdgeInsets.all(10.0),
-                                              child: Column(
-                                                children: <Widget>[
-                                                  FaIcon(
-                                                    FontAwesomeIcons.heartbeat,
-                                                    color: Colors.pink,
-                                                    size: 70.0,
-                                                    semanticLabel:
-                                                        'PPG Reading',
-                                                  ),
-                                                  Text("PPG Reading",
-                                                      style: TextStyle(
-                                                          fontSize: 16)),
-                                                ],
-                                              ),
-                                            ))),
-                                  ],
-                                ),
+                              new Column(
+                                children: <Widget>[
+                                  Card(
+                                      elevation: 5,
+                                      child: InkWell(
+                                          onTap: () {
+                                            Navigator.of(context)
+                                                .pushNamed("/ocr");
+                                          },
+                                          child: Padding(
+                                            padding: EdgeInsets.all(10.0),
+                                            child: Column(
+                                              children: <Widget>[
+                                                FaIcon(
+                                                  FontAwesomeIcons.airFreshener,
+                                                  color: Colors.pink,
+                                                  size: 70.0,
+                                                  semanticLabel: 'OCR',
+                                                ),
+                                                Text("OCR",
+                                                    style: TextStyle(
+                                                        fontSize: 16)),
+                                              ],
+                                            ),
+                                          ))),
+                                  Card(
+                                      elevation: 5,
+                                      child: InkWell(
+                                          onTap: () {
+                                            Navigator.of(context)
+                                                .pushNamed("/ppg");
+                                          },
+                                          child: Padding(
+                                            padding: EdgeInsets.all(10.0),
+                                            child: Column(
+                                              children: <Widget>[
+                                                FaIcon(
+                                                  FontAwesomeIcons.heartbeat,
+                                                  color: Colors.pink,
+                                                  size: 70.0,
+                                                  semanticLabel: 'PPG',
+                                                ),
+                                                Text("PPG",
+                                                    style: TextStyle(
+                                                        fontSize: 16)),
+                                              ],
+                                            ),
+                                          ))),
+                                  Card(
+                                      elevation: 5,
+                                      child: InkWell(
+                                          onTap: () {
+                                            Navigator.of(context)
+                                                .pushNamed("/loginCard");
+                                          },
+                                          child: Padding(
+                                            padding: EdgeInsets.all(10.0),
+                                            child: Column(
+                                              children: <Widget>[
+                                                FaIcon(
+                                                  FontAwesomeIcons.userAlt,
+                                                  color: Colors.pink,
+                                                  size: 70.0,
+                                                  semanticLabel:
+                                                      'Prescription Card',
+                                                ),
+                                                Text("Prescription Card",
+                                                    style: TextStyle(
+                                                        fontSize: 16)),
+                                              ],
+                                            ),
+                                          ))),
+                                  SizedBox(height: 30),
+                                  Image(
+                                    image:
+                                        AssetImage('assets/images/loading.gif'),
+                                  ),
+                                ],
                               )
                             ],
                           ))),

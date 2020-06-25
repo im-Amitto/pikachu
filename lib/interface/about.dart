@@ -49,11 +49,6 @@ class AboutUs extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.w900,
                       fontSize: 24,
-                      color: Colors.black)),
-              Text("Vivek Singh Baghel",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      fontSize: 24,
                       color: Colors.black))
             ]),
       ),

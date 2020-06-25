@@ -13,11 +13,11 @@ import (
 )
 
 type user struct {
-	Login    string
-	Pass     string
-	Age      string
-	bGroup   string
-	Location string
+	symptom1          string
+	symptom2          string
+	symptom3          string
+	diseaseDiagnosed  string
+	medicinePrescribd string
 }
 
 var storedData []user
@@ -87,19 +87,19 @@ func loginCard(w http.ResponseWriter, r *http.Request) {
 
 func matchUser(usr1 user, usr2 user) bool {
 	matched := true
-	if usr1.Login != "?" && usr1.Login != "" && usr1.Login != usr2.Login {
+	if usr1.symptom1 != "?" && usr1.symptom1 != "" && usr1.symptom1 != usr2.symptom1 {
 		matched = false
 	}
-	if usr1.Pass != "?" && usr1.Pass != "" && usr1.Pass != usr2.Pass {
+	if usr1.symptom2 != "?" && usr1.symptom2 != "" && usr1.symptom2 != usr2.symptom2 {
 		matched = false
 	}
-	if usr1.Age != "?" && usr1.Age != "" && usr1.Age != usr2.Age {
+	if usr1.symptom3 != "?" && usr1.symptom3 != "" && usr1.symptom3 != usr2.symptom3 {
 		matched = false
 	}
-	if usr1.bGroup != "?" && usr1.bGroup != "" && usr1.bGroup != usr2.bGroup {
+	if usr1.diseaseDiagnosed != "?" && usr1.diseaseDiagnosed != "" && usr1.diseaseDiagnosed != usr2.diseaseDiagnosed {
 		matched = false
 	}
-	if usr1.Location != "?" && usr1.Location != "" && usr1.Location != usr2.Location {
+	if usr1.medicinePrescribd != "?" && usr1.medicinePrescribd != "" && usr1.medicinePrescribd != usr2.medicinePrescribd {
 		matched = false
 	}
 	return matched
@@ -107,29 +107,29 @@ func matchUser(usr1 user, usr2 user) bool {
 
 func structToString(usr user) string {
 	output := ""
-	if usr.Login != "" {
-		output += "Login: "
-		output += usr.Login
+	if usr.symptom1 != "" {
+		output += "Symptom 1: "
+		output += usr.symptom1
 		output += "\n"
 	}
-	if usr.Pass != "" {
-		output += "Pass: "
-		output += usr.Pass
+	if usr.symptom2 != "" {
+		output += "Symptom 2: "
+		output += usr.symptom2
 		output += "\n"
 	}
-	if usr.Age != "" {
-		output += "Age: "
-		output += usr.Age
+	if usr.symptom3 != "" {
+		output += "Symptom 3: "
+		output += usr.symptom3
 		output += "\n"
 	}
-	if usr.bGroup != "" {
-		output += "Blood Group: "
-		output += usr.bGroup
+	if usr.diseaseDiagnosed != "" {
+		output += "Disease diagnosed: "
+		output += usr.diseaseDiagnosed
 		output += "\n"
 	}
-	if usr.Location != "" {
-		output += "Location: "
-		output += usr.Location
+	if usr.medicinePrescribd != "" {
+		output += "Medicine prescribed: "
+		output += usr.medicinePrescribd
 		output += "\n"
 	}
 	return output
@@ -159,10 +159,10 @@ func handleInput(usr user, findUser bool) string {
 			}
 		}
 		if duplicate {
-			return ("Duplicate User")
+			return ("Duplicate Prescription")
 		} else {
 			storedData = append(storedData, usr)
-			return ("User has been saved")
+			return ("Prescription has been saved")
 		}
 	}
 }
@@ -178,16 +178,16 @@ func stringToUser(str string) (user, string) {
 		if len(val) != 2 {
 			return u, "Invalid Input"
 		}
-		if val[0] == "Login" {
-			u.Login = val[1]
-		} else if val[0] == "Pass" {
-			u.Pass = val[1]
-		} else if val[0] == "Age" {
-			u.Age = val[1]
-		} else if val[0] == "Blood Group" {
-			u.bGroup = val[1]
-		} else if val[0] == "Location" {
-			u.Location = val[1]
+		if strings.ToLower(val[0]) == "symptom 1" {
+			u.symptom1 = val[1]
+		} else if strings.ToLower(val[0]) == "symptom 2" {
+			u.symptom2 = val[1]
+		} else if strings.ToLower(val[0]) == "symptom 3" {
+			u.symptom3 = val[1]
+		} else if strings.ToLower(val[0]) == "disease diagnosed" {
+			u.diseaseDiagnosed = val[1]
+		} else if strings.ToLower(val[0]) == "medicine prescribed" {
+			u.medicinePrescribd = val[1]
 		} else {
 			return u, "Invalid Input"
 		}
