@@ -149,7 +149,7 @@ func handleInput(usr user, findUser bool) string {
 		if userFound {
 			return structToString(tempUsr)
 		} else {
-			return ("No user found")
+			return ("No prescription found")
 		}
 	} else {
 		duplicate := false
